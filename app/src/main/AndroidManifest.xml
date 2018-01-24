@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.handict.superapp_mobile">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 获取手机录音机使用权限,听写、识别、语义理解需要用到此权限 -->
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 允许程序改变网络连接状态 -->
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 配置权限,用来记录应用配置信息 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- 摄相头权限,拍照需要用到 -->
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--友盟统计-->
+    <uses-sdk android:minSdkVersion="16"></uses-sdk>
+    <application
+        android:icon="@mipmap/icon"
+        android:label="爱手工"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+        >
+        <activity android:name=".MainActivity"
+            android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+            android:screenOrientation="portrait" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity1"/>
+        <activity android:name=".SkinActivity"
+            android:configChanges="orientation|keyboard|locale|screenSize|layoutDirection"
+            ></activity>
+        <!--Unity-->
+        <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+        <!--友盟统计-->
+        <meta-data android:value="59e8062ab27b0a2ac70002bf" android:name="UMENG_APPKEY"></meta-data>
+        <meta-data android:value="Channel ID" android:name="UMENG_CHANNEL"/>
+        <!--微信支付-->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name="com.handict.superapp_mobile.wx.ShowFromWXActivity"
+            android:label="@string/app_name"
+            android:theme="@style/MMTheme.Basic"/>
+
+        <activity
+            android:name="com.handict.superapp_mobile.wx.PayActivity"
+            android:label="@string/app_name"
+            android:theme="@style/MMTheme.Basic"/>
+
+        <receiver
+            android:name="com.handict.superapp_mobile.wx.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+        <!-- 请填写真实的APP_ID API_KEY SECRET_KEY -->
+        <meta-data
+            android:name="com.baidu.speech.APP_ID"
+            android:value="10317592" />
+        <meta-data
+            android:name="com.baidu.speech.API_KEY"
+            android:value="qLbYodlloUrRntF7Wun2S2l6" />
+        <meta-data
+            android:name="com.baidu.speech.SECRET_KEY"
+            android:value="R2ryuQ4xBAIN1VXfxsKySfmHg1aNBT3c" />
+        <service android:name="com.baidu.speech.VoiceRecognitionService" android:exported="false" />
+
+        <activity
+            android:name="com.baidu.voicerecognition.android.ui.BaiduASRDigitalDialog"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="com.baidu.action.RECOGNIZE_SPEECH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ApiActivity"
+            android:label="普通模式(API方式和UI方式)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="com.baidu.speech.recognizerdemo.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <!--android:configChanges="keyboardHidden"-->
+        <activity
+            android:name=".Setting"
+            android:label="设置"
+
+            android:theme="@android:style/Theme.NoDisplay" >
+            <!--android:theme="@android:style/Theme.DeviceDefault.Light">-->
+            <intent-filter>
+                <action android:name="com.baidu.speech.asr.demo.setting" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <uses-library android:name="android.test.runner" />
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+        <activity android:name=".A123"
+            android:configChanges="orientation|keyboard|locale|screenSize|layoutDirection"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="com.baidu.speech.recognizerdemo.intent.category.SAMPLE_CODE" />
+
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SkinActivity2"
+            android:configChanges="orientation|keyboard|locale|screenSize|layoutDirection">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="com.baidu.speech.recognizerdemo.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.aliyun.vodplayerview.widget.AliyunVodPlayerView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" >
+    </com.aliyun.vodplayerview.widget.AliyunVodPlayerView>
+    <ProgressBar
+    android:id="@+id/play_bar"
+    style="@style/mProgress_circle"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_gravity="center" />
+    <ImageView
+        android:id="@+id/scanBtn"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/scan"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="15dp"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/backBtn"
+        android:background="@null"
+        android:layout_margin="10dp"/>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="358"
+            android:visibility="invisible"
+            /><LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="175">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="297"
+            android:visibility="invisible"
+            />
+        <com.handict.superapp_mobile.view.VoiceWaveView
+            android:id="@+id/wvw_main"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_marginRight="100dp"
+            android:layout_weight="570"
+            android:layout_gravity="center"
+
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="415"
+            android:visibility="invisible"
+            />
+    </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="189"
+            android:visibility="invisible"
+            />
+    </LinearLayout>
+    <ScrollView
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtLog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="12dp"/>
+    </ScrollView>
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn"
+        android:layout_weight="1"/>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <Button
+        android:visibility="visible"
+        android:layout_marginTop="80dp"
+        android:onClick="onClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/bj_linear"
+        android:layout_width="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <ImageView
+
+            android:id="@+id/play_play3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+             />
+    </LinearLayout>
+</FrameLayout>

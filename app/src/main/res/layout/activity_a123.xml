@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.handict.superapp_mobile2.A123"
+    android:background="@mipmap/a1" >
+
+    <LinearLayout
+        android:layout_width="210dp"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="110dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginRight="170dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
+
+            <Button
+                android:id="@+id/btn_cyd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@mipmap/a4"
+                android:text="常雨蝶"
+                android:onClick="onClick"
+                android:textColor="#BA4400"/>
+
+            <Button
+                android:id="@+id/btn_cc"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@mipmap/a4"
+                android:onClick="onClick"
+                android:text="聪聪" android:textColor="#BA4400" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <Button
+                android:id="@+id/btn_lx"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@mipmap/a4"
+                android:onClick="onClick"
+                android:text="刘星" android:textColor="#BA4400" />
+
+            <Button
+                android:id="@+id/btn_lc"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@mipmap/a4"
+                android:onClick="onClick"
+                android:text="吕辰" android:textColor="#BA4400" />
+
+            <Button
+                android:id="@+id/btn_tt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@mipmap/a4"
+                android:onClick="onClick"
+                android:text="跳跳" android:textColor="#BA4400" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/a123_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="昵 称"
+        android:textStyle="bold"
+        android:textColor="#BA4400"
+        android:textSize="33sp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_marginRight="42dp"
+        android:layout_marginEnd="42dp" />
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="72dp"
+        android:background="#999"
+        android:onClick="onClick"
+        android:id="@+id/btn_qd"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+
